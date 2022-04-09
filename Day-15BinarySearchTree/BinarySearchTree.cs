@@ -63,6 +63,29 @@ namespace Day_15BinarySearchTree
                 rightCount++;
             }
         }
+        //Creating a method to search element in BST
+        public Node<T> Search(Node<T> root, T data)
+        {
+            if (root == null) //If root is null that means element not found
+            {
+                Console.WriteLine($"\n{data} is not founded in Binary search tree");
+                return null;
+            }
+            if (root.data.Equals(data))//If element is equal to root value that means element founded
+            {
+                Console.WriteLine($"\n{data} is founded in Binary search tree");
+                return root;
+            }
+            else if (data.CompareTo(root.data) < 0) //Checking that new element is less than root data
+            {
+                root.left = Search(root.left, data);
+            }
+            else if (data.CompareTo(root.data) > 0) //Checking that new element is greater than root data
+            {
+                root.right = Search(root.right, data);
+            }
+            return root;
+        }
         public void TreeSize()
         {
             Console.WriteLine($"\n\nThe size of binary search tree is : {1 + leftCount + rightCount}");

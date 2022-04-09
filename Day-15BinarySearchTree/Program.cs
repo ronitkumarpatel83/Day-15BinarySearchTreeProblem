@@ -25,9 +25,12 @@ namespace Day_15BinarySearchTree
             bst.Insert(root, 16);
             bst.Insert(root, 63);
             bst.Insert(root, 67);
-            Console.WriteLine("Inorder Traversal of given binary tree is : ");
+            Console.WriteLine("\nInorder Traversal of given binary tree is : ");
             bst.InOrderTraversal(root); // Calling a method to display tree element in inorder
             bst.TreeSize(); // Calling a method to display tree size
+            Console.WriteLine("\nEnter any number you want to find in BST : ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            bst.Search(root, n); // Calling method to search element
             Console.ReadLine();
         }
     }
